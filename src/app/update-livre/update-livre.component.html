@@ -1,0 +1,21 @@
+<div *ngIf="livreForm">
+  <form [formGroup]="livreForm">
+    <div class="mb-3">
+
+      <input type="hidden" class="form-control" formControlName="isbnlivre">
+
+      <label for="titre" class="form-label">Titre</label>
+      <input type="text" class="form-control" formControlName="titre">
+    </div>
+    <div class="mb-3">
+      <label for="auteur" class="form-label">Auteur</label>
+      <input type="text" class="form-control" formControlName="auteur">
+    </div>
+    <div class="mb-3">
+        <label for="datePublication" class="form-label">Date Publication</label>
+        <input type="date" class="form-control" formControlName="datePublication">
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="updateLivre()">Enregistrer</button>
+  </form>
+</div>
+

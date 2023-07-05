@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ISBNLivre</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Auteur</th>
+        <th scope="col">Date publication</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livre of listeLivre | async">
+        <th scope="row">{{livre.isbnlivre}}</th>
+        <td>{{livre.titre}}</td>
+        <td>{{livre.auteur}}</td>
+        <td>{{livre.datePublication}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="getLivreByIsbn(livre.isbnlivre)">Modifier</button>
+          <button type="button" class="btn btn-danger" (click)="supprimer(livre.isbnlivre)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
